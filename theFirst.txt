@@ -1,0 +1,2 @@
+this is the mintGit file
+and this is a test
