@@ -47,3 +47,5 @@ endfunc
 inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
+
+nmap <silent> <c-n> :NERDTreeToggle<CR>
