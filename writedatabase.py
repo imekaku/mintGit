@@ -11,17 +11,17 @@ def create_db(dbname):
     conn = sqlite3.connect(dbname)
     cursor = conn.cursor()
     cursor.execute("create table table1("
-                   "id text, "
+                   "id int, "
                    "title text, "
                    "authors text, "
                    "year text, "
                    "conf text, "
                    "citation text, "
-                   "index_id unsigned big int primary key, "
+                   "index_id int primary key, "
                    "pid text, "
                    "ref text, "
-                   "ref_count text, "
-                   "refed_count text,"
+                   "ref_count int, "
+                   "refed_count int,"
                    "abstract text"
                    ")")
     conn.commit()
@@ -160,7 +160,7 @@ def update_db(dbname):
     cursor = conn.cursor()
 
     for i in range(0, dictNum):
-        cursor.execute("update table1 set refed_count = ? where index_id = ?", (elementCounter[line[i]], int(line[i])))
+        cursor.execute("update table1 set refed_count = ? where index_id = ?", (int(elementCounter[line[i]]), int(line[i])))
     
 
     conn.commit()
